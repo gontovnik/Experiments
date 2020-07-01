@@ -20,6 +20,10 @@ it, simply add the following line to your Podfile:
 pod 'Experiments'
 ```
 
+## Usage
+
+For now, please see the Example project. 
+
 ## Author
 
 gontovnik, danil@gontovnik.com
