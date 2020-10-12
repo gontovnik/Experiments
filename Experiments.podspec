@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name                  = 'Experiments'
-  s.version               = '0.1.0'
+  s.version               = '0.2.0'
   s.summary               = 'Implementation of the service and little infra for easy on-device A/B testing on iOS.'
   s.description           = 'Implementation of the service and little infra for easy on-device A/B testing on iOS.'
   s.homepage              = 'https://github.com/gontovnik/Experiments'
