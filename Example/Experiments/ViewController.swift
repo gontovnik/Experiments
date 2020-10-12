@@ -43,7 +43,10 @@ final class ViewController: UIViewController {
 
     // MARK: - Vars
 
-    private let experimentService = ExperimentService(userDefaults: .standard, analyticsTracker: AnalyticsTracker())
+    private let experimentService = ExperimentService(
+        storage: UserDefaults.standard,
+        analyticsTracker: AnalyticsTracker()
+    )
 
     private let button = UIButton(type: .system)
 

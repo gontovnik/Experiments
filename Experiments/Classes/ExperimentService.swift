@@ -6,13 +6,13 @@ public class ExperimentService: ExperimentServiceProtocol, ExperimentServiceDebu
 
     // MARK: - Vars
 
-    private let userDefaults: UserDefaults
+    private let storage: KeyValueStoring
     private let analyticsTracker: ExperimentAnalyticsTracking
 
     // MARK: - Init
 
-    public init(userDefaults: UserDefaults, analyticsTracker: ExperimentAnalyticsTracking) {
-        self.userDefaults = userDefaults
+    public init(storage: KeyValueStoring, analyticsTracker: ExperimentAnalyticsTracking) {
+        self.storage = storage
         self.analyticsTracker = analyticsTracker
     }
 
@@ -47,12 +47,11 @@ public class ExperimentService: ExperimentServiceProtocol, ExperimentServiceDebu
     var registeredExperiments = [RegisteredExperimentDebug]()
 
     func allocatedGroupRawForExperiment(withKey key: String) -> String? {
-        return userDefaults.string(forKey: key)
+        return storage.string(forKey: key)
     }
 
     func allocateGroup(experimentKey: String, groupRaw: String) {
-        userDefaults.set(groupRaw, forKey: experimentKey)
-        userDefaults.synchronize()
+        storage.set(groupRaw, forKey: experimentKey)
 
         analyticsTracker.setUserProperties([
             experimentKey: groupRaw
