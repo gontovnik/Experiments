@@ -57,5 +57,6 @@ public class ExperimentService: ExperimentServiceProtocol, ExperimentServiceDebu
         analyticsTracker.setUserProperties([
             experimentKey: groupRaw
         ])
+        analyticsTracker.log(event: "\(experimentKey)_registered", parameters: nil)
     }
 }

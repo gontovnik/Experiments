@@ -3,5 +3,6 @@
 import Foundation
 
 public protocol ExperimentAnalyticsTracking {
+    func log(event: String, parameters: [AnyHashable: Any]?)
     func setUserProperties(_ userProperties: [AnyHashable: Any])
 }

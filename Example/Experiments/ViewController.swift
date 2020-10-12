@@ -5,6 +5,10 @@ import UIKit
 import Experiments
 
 private final class AnalyticsTracker: ExperimentAnalyticsTracking {
+    func log(event: String, parameters: [AnyHashable : Any]?) {
+        print("[AnalyticsTracker] log: ", event, parameters ?? [:])
+    }
+    
     func setUserProperties(_ userProperties: [AnyHashable : Any]) {
         print("[AnalyticsTracker] setUserProperties: ", userProperties)
     }
